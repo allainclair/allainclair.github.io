@@ -15,12 +15,15 @@ const commaSpace = {text: ", "}
 
 export const dataJobs = [
   {
+    id: 1,
     company: pinterest,
     current: true,
     description_: [],
     description: [
       {
-        text: "Work on monitoring, alerting & reporting for Ads teams.",
+        text: `We need to take care of our Ads Systems to be reliable for Pinterest's clients.
+          This way, I work on monitoring, alerting & reporting for our Ads teams.
+        `,
         link: null,
       }
     ],
@@ -29,11 +32,16 @@ export const dataJobs = [
     time: "1 year",
   },
   {
+    id: 2,
     company: bairesDev,
     current: true,
     description: [
       {
-        text: "Work on screening process and mentorship.",
+        text: `We have to recruit great people using screening processes, and we also
+        had a BairesDev Arena, a one-day championship to get the best candidates
+        among many. We also provide mentorships for employees with some
+        difficulties or for the new ones.
+        `,
         link: null,
       }
     ],
@@ -42,11 +50,14 @@ export const dataJobs = [
     time: "1 year",
   },
   {
+    id: 3,
     company: stateUniversityOfParana,
     current: false,
     description: [
       {
-        text: "I ministered the following subjects: ",
+        text: `I thought that I would be a professor forever, but I gradually
+        changed my mind, even before this experience. During this experience,
+        I ministered the following subjects: `,
         link: null,
       },
       {
@@ -89,12 +100,13 @@ export const dataJobs = [
     time: "7 months",
   },
   {
+    id: 4,
     company: seebot,
     current: false,
     description_: [],
     description: [
       {
-        text: "Leading software engineers to develop: a ",
+        text: "We had to create an entire ",
         link: null,
       },
       {
@@ -102,9 +114,10 @@ export const dataJobs = [
         link: "https://en.wikipedia.org/wiki/Smart_traffic_light",
       },
       {
-        text: `, hardware and software controllers, traffic simulators for traffic
-          optimization, and dashboards. Designing hardware and software for traffic
-          light controllers. Designing and developing a traffic simulator using `,
+        text: `, a vast tech challenge. We designed and led software engineers
+          to conceive this device that is a traffic light with cameras that see the streets.
+          We also designed and developed traffic simulators for traffic optimization using
+        `,
         link: null,
       },
       {
@@ -112,8 +125,39 @@ export const dataJobs = [
         link: "https://www.eclipse.org/sumo/",
       },
       {
-        text: `. Our algorithm on this simulator had 200% to 400% waiting time
-        optimization on light to medium vehicle traffic.`,
+        text: " (",
+        link: null,
+      },
+      {
+        text: "video 1",
+        link: "https://www.youtube.com/watch?v=O3LeB9JBGdw",
+      },
+      {
+        text: " and ",
+        link: null,
+      },
+      {
+        text: "video 2",
+        link: "https://www.youtube.com/watch?v=SbJ0awuzen4",
+      },
+      {
+        text: ")",
+        link: null,
+      },
+      {
+        text: ", dashboards, and ",
+        link: null,
+      },
+      {
+        text: "Digital Image Processing",
+        link: "https://en.wikipedia.org/wiki/Digital_image_processing",
+      },
+      {
+        text: ` systems. Our optimization algorithm on this simulator reduced
+          200% to 400% waiting time on light to medium vehicle traffic.
+          We also designed and developed hardware and software for non-smart
+          traffic light controllers.
+        `,
         link: null,
       },
     ],
@@ -122,11 +166,14 @@ export const dataJobs = [
     time: "4 years",
   },
   {
+    id: 5,
     company: earlySec,
     current: false,
     description: [
       {
-        text: "We used ",
+        text: `We created intelligent alert systems to tell companies about
+          security risks using information from social media apps. We used 
+        `,
         link: null,
       },
       {

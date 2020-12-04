@@ -7,6 +7,7 @@ import {
 
 export const dataEducations = [
   {
+    id: 1,
     institution: stateUniversityOfParana,
     thesis: [
       {
@@ -39,6 +40,7 @@ export const dataEducations = [
     time: "2 years",
   },
   {
+    id: 2,
     institution: stateUniversityOfParana,
     thesis: [
       {
