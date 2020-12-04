@@ -18,3 +18,11 @@
 ### Deploy github pages
 
 https://create-react-app.dev/docs/deployment/
+
+```
+# package.json
+"script": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -b BRANCH_OF_THE_SITE -d build",
+}
+```
