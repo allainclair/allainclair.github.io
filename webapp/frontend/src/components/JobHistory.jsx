@@ -7,7 +7,7 @@ import Jobs from "./Jobs";
 
 const JobHistory = () => (
   <>
-    <Heading mt={6} size="lg" align="center">Job History</Heading>
+    <Heading mt={6} size="md" align="center">Job History</Heading>
     <Jobs />
   </>
 );

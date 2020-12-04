@@ -7,7 +7,7 @@ export const ScientificPapers = () => {
 
   return (
     <>
-      <Heading mt={6} size="lg" align="center">Scientific Papers</Heading>
+      <Heading mt={6} size="md" align="center">Scientific Papers</Heading>
       <Accordion mt={3} allowMultiple>
         { papers.map(paper => (
           <Paper
@@ -31,7 +31,7 @@ function fakeRequest() {
     {
       institution: {
         name: "Journal of Universal Computer Science",
-        link: "http://http://www.jucs.org/",
+        link: "http://www.jucs.org/",
       },
       description: [
         {

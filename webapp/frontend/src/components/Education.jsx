@@ -15,11 +15,11 @@ import TechsUsed from "./TechsUsed";
 import Description from "./Description";
 
 export const Education = props => {
-  const { graduation, institution, techs, time, thesis } = props;
+  const { id, graduation, institution, techs, time, thesis } = props;
   const bg = useColorModeValue("gray.100", "gray.900");
 
   return (
-    <AccordionItem>
+    <AccordionItem key={id}>
       <AccordionButton _expanded={{ bg: bg }}>
         <Box flex="1" textAlign="left">
           <Text fontSize="lg">{graduation} at {" "}

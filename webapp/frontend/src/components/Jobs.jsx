@@ -9,8 +9,9 @@ export const Jobs = () => {
   const jobs = getJobs();
   return (
     <Accordion mt={3} allowMultiple>
-      {jobs.map(job => (
+      {jobs.map((job, index) => (
         <Job
+          id={index}
           company={job.company}
           current={job.current}
           description={job.description}

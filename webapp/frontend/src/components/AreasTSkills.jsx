@@ -5,7 +5,7 @@ import TechSkills from "./TechSkills";
 
 export const AreasTSkills = () => (
   <>
-    <Heading mt={6} size="lg" align="center">Interest Areas & Tech Skills</Heading>
+    <Heading mt={6} size="md" align="center">Interest Areas & Tech Skills</Heading>
     <Flex mt={3}>
       <Box width="55%">
         <InterestAreas/>

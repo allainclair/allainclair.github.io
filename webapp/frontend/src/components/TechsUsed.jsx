@@ -5,9 +5,9 @@ import React from "react";
 export const TechsUsed = props => (
   <Wrap spacing="1">
     <WrapItem>Techs used: </WrapItem>
-    { props.techs.map(tech =>
+    { props.techs.map((tech, index) =>
       (
-        <WrapItem>
+        <WrapItem key={index}>
           <Tag>
             <EntityLink
               text={tech.name}

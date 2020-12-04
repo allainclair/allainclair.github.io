@@ -17,11 +17,11 @@ import TechsUsed from "./TechsUsed";
 
 
 export const Job = props => {
-  const { company, current, description, position, techs, time } = props;
+  const { id, company, current, description, position, techs, time } = props;
   const backGround = useColorModeValue("gray.100", "gray.900");
 
   return (
-    <AccordionItem>
+    <AccordionItem key={id}>
       <AccordionButton _expanded={{ bg: backGround }}>
         <Box flex="1" textAlign="left">
           <Text fontSize="lg">{position} at {" "}

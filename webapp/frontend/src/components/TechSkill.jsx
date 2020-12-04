@@ -1,5 +1,5 @@
-import { Box, Link, Flex, Spacer } from "@chakra-ui/react";
-import { Icon, StarIcon } from "@chakra-ui/icons";
+import { Box, Flex, Spacer } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
 import React from "react";
 
 import EntityLink from "./EntityLink";

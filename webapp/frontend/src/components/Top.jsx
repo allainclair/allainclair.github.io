@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { EmailIcon, Icon } from "@chakra-ui/icons";
+import { DownloadIcon, EmailIcon, Icon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 import {
   Center,
   Image,
@@ -8,25 +8,29 @@ import {
   HStack,
   Link,
   Tooltip,
+  Text, useColorMode, Button, IconButton
 } from "@chakra-ui/react";
 
-import me from './allain.jpg';
+import me from "./allain.jpg";
 
 const Top = () => (
   <>
-    <Center mt={2}>
+    <Center mt={3}>
       <Image alt="Allainclair" src={me} boxSize="30%" borderRadius="full" fit />
     </Center>
 
-    <Heading mt={2} align="center">Allainclair Flausino dos Santos</Heading>
+    <Heading mt={3} align="center">Allainclair Flausino dos Santos</Heading>
 
-    <Heading mt={2} size="lg" align="center">
-      Software Engineer at <Link href="https://pinterest.com">Pinterest</Link> and <Link href="https://bairesdev.com/">BairesDev</Link>
-    </Heading>
+    <Text mt={1} fontSize="2xl" align="center">
+      Software Engineer at {` `}
+      <Link href="https://pinterest.com">Pinterest</Link>
+      {` and `}
+      <Link href="https://bairesdev.com/">BairesDev</Link>
+    </Text>
 
-    <Heading mt={2} size="md" align="center">
+    <Text mt={1} fontSize="xl" align="center">
       <Link href="http://python.org/">Python</Link> dev, Software Engineer, and Computer Scientist
-    </Heading>
+    </Text>
 
     <Center mt={2}>
       <HStack>
@@ -46,7 +50,35 @@ const Top = () => (
         </Link>
       </HStack>
     </Center>
+    <Center mt={2}>
+      <HStack>
+        <ToggleModeButton/>
+        <MyResumeButton/>
+      </HStack>
+    </Center>
   </>
 );
+
+function ToggleModeButton() {
+  const { colorMode, toggleColorMode } = useColorMode()
+  return (
+    <IconButton
+      onClick={toggleColorMode}
+      icon={colorMode === "light" ? <MoonIcon/> : <SunIcon/> }
+    />
+  )
+}
+
+function MyResumeButton() {
+  return (
+    <Button
+      as={Link}
+      href="https://github.com/allainclair/allainclair/raw/gh-pages/allainclair-resume.pdf"
+      rightIcon={<DownloadIcon/>}
+    >
+      My Resume
+    </Button>
+  );
+}
 
 export default Top;

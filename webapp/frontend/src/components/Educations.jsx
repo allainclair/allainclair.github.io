@@ -8,10 +8,11 @@ export const Educations = () => {
   const educations = getEducations();
   return (
     <>
-      <Heading mt={6} size="lg" align="center">Education</Heading>
+      <Heading mt={6} size="md" align="center">Education</Heading>
       <Accordion mt={3} allowMultiple>
-        {educations.map(education => (
+        {educations.map((education, index) => (
           <Education
+            id={index}
             institution={education.institution}
             thesis={education.thesis}
             graduation={education.graduation}
