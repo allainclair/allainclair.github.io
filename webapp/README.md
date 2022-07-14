@@ -9,11 +9,16 @@
 3. Remove unnecessary files from installation
 
 4. npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
-
+   
 5. `$ npm i @chakra-ui/icons`
 
-6. npm install react-icons --save
+6. `$ npm i react-icons/io5`
 
+7. npm install react-icons --save
+
+#### Detect browser language 
+
+yarn add detect-browser-language
 
 ### Deploy github pages
 

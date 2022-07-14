@@ -3,12 +3,15 @@ import {
   Heading,
 } from "@chakra-ui/react";
 
+import { t } from "../translate";
 import Jobs from "./Jobs";
 
-const JobHistory = () => (
+const JobHistory = (props) => (
   <>
-    <Heading mt={6} size="md" align="center">Job History</Heading>
-    <Jobs />
+    <Heading mt={6} size="md" align="center">
+      {t(["Job History"], props.contentLanguage)}
+    </Heading>
+    <Jobs contentLanguage={props.contentLanguage} />
   </>
 );
 

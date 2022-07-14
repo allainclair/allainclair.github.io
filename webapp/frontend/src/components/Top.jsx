@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { DownloadIcon, EmailIcon, Icon, SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { DownloadIcon, EmailIcon, Icon, SunIcon, MoonIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Center,
   Image,
@@ -8,56 +8,68 @@ import {
   HStack,
   Link,
   Tooltip,
-  Text, useColorMode, Button, IconButton
+  Text, useColorMode, Button, IconButton,
 } from "@chakra-ui/react";
 
 import me from "./allain.jpg";
+import { t } from "../translate";
+import ChangeLanguage from "./ChangeLangue";
 
-const Top = () => (
-  <>
-    <Center mt={3}>
-      <Image alt="Allainclair" src={me} boxSize="30%" borderRadius="full" fit />
-    </Center>
+const Top = props => {
+  const { contentLanguage } = props;
 
-    <Heading mt={3} align="center">Allainclair Flausino dos Santos</Heading>
+  return (
+    <>
+      <Center mt={3}>
+        <Image alt="Allainclair's Photo" src={me} boxSize="30%" borderRadius="full" fit />
+      </Center>
+      <Center mt={3}>
+        <ChangeLanguage
+          contentLanguage={contentLanguage}
+          setContentLanguage={props.setContentLanguage}
+        />
+      </Center>
 
-    <Text mt={1} fontSize="2xl" align="center">
-      Software Engineer at {` `}
-      <Link href="https://pinterest.com">Pinterest</Link>
-      {` and `}
-      <Link href="https://bairesdev.com/">BairesDev</Link>
-    </Text>
+      <Heading mt={3} align="center">Allainclair Flausino dos Santos</Heading>
 
-    <Text mt={1} fontSize="xl" align="center">
-      <Link href="http://python.org/">Python</Link> dev, Software Engineer, and Computer Scientist
-    </Text>
+      <Text mt={1} fontSize="2xl" align="center">
+        {t(["Software Engineer", "at"], contentLanguage)} {` `}
+        <Link href="https://pinterest.com">Pinterest</Link>
+        {` ${t(["and"], contentLanguage)} `}
+        <Link href="https://bairesdev.com/">BairesDev</Link>
+      </Text>
 
-    <Center mt={2}>
-      <HStack>
-        <Tooltip label="allainclair@gmail.com" aria-label="allainclair@gmail.com">
-          <Link href="mailto:allainclair@gmail.com">
-            <EmailIcon w={8} h={8} />
+      <Text mt={1} fontSize="xl" align="center">
+        <Link href="http://python.org/">Python</Link> dev, {t(["Software Engineer"], contentLanguage)}, {t(["and", "Computer Scientist"], contentLanguage)}
+      </Text>
+
+      <Center mt={2}>
+        <HStack>
+          <Tooltip label="allainclair@gmail.com" aria-label="allainclair@gmail.com">
+            <Link href="mailto:allainclair@gmail.com" isExternal>
+              <EmailIcon w={8} h={8} />
+            </Link>
+          </Tooltip>
+          <Link href="https://github.com/allainclair" isExternal>
+            <Icon as={FaGithub} w={8} h={8} />
           </Link>
-        </Tooltip>
-        <Link href="https://github.com/allainclair">
-          <Icon as={FaGithub} w={8} h={8} />
-        </Link>
-        <Link href="https://www.linkedin.com/in/allainclair/">
-          <Icon as={FaLinkedin} w={8} h={8} />
-        </Link>
-        <Link href="https://twitter.com/allainclair">
-          <Icon as={FaTwitter} w={8} h={8} />
-        </Link>
-      </HStack>
-    </Center>
-    <Center mt={2}>
-      <HStack>
-        <ToggleModeButton/>
-        <MyResumeButton/>
-      </HStack>
-    </Center>
-  </>
-);
+          <Link href="https://www.linkedin.com/in/allainclair/" isExternal>
+            <Icon as={FaLinkedin} w={8} h={8} />
+          </Link>
+          <Link href="https://twitter.com/allainclair" isExternal>
+            <Icon as={FaTwitter} w={8} h={8} />
+          </Link>
+        </HStack>
+      </Center>
+      <Center mt={2}>
+        <HStack>
+          <ToggleModeButton/>
+          <MyResumeButton contentLanguage={contentLanguage}/>
+        </HStack>
+      </Center>
+    </>
+  );
+};
 
 function ToggleModeButton() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -69,14 +81,16 @@ function ToggleModeButton() {
   )
 }
 
-function MyResumeButton() {
+function MyResumeButton(props) {
+  const { contentLanguage } = props;
+
   return (
     <Button
       as={Link}
       href="https://github.com/allainclair/allainclair/raw/gh-pages/allainclair-resume.pdf"
       rightIcon={<DownloadIcon/>}
     >
-      My Resume
+      {t(["My resume"], contentLanguage)}
     </Button>
   );
 }

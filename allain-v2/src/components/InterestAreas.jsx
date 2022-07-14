@@ -1,12 +1,18 @@
 import React from "react";
-import { Link, Wrap, WrapItem, Tag } from "@chakra-ui/react";
+import {Heading, Link, Tag, Wrap, WrapItem, VStack} from "@chakra-ui/react";
 
-export const InterestAreas = () => (
-  <>
+const InterestAreas = () => (
+  <VStack>
+    <Heading size="md">Interest Areas</Heading>
     <Wrap spacing={2}>
       <WrapItem>
         <Tag as={Link} href="https://en.wikipedia.org/wiki/Algorithm" colorScheme="blue" size="lg">
           Algorithms
+        </Tag>
+      </WrapItem>
+      <WrapItem>
+        <Tag as={Link} href="https://en.wikipedia.org/wiki/Software_engineering" colorScheme="blue" size="lg">
+          Software Engineering
         </Tag>
       </WrapItem>
       <WrapItem>
@@ -29,21 +35,22 @@ export const InterestAreas = () => (
           Monitoring & Alerting
         </Tag>
       </WrapItem>
-      <WrapItem>
-        <Tag as={Link} href="https://en.wikipedia.org/wiki/Research_and_development" colorScheme="blue" size="lg">
-          R & D
-        </Tag>
-      </WrapItem>
 
       <WrapItem>
         <Tag as={Link} href="https://en.wikipedia.org/wiki/Data_science#:~:text=Data%20science%20is%20a%20%22concept,domain%20knowledge%20and%20information%20science." colorScheme="blue" size="lg">
-          Data Science
+          Data Science & Engineering
         </Tag>
       </WrapItem>
 
       <WrapItem>
         <Tag as={Link} href="https://en.wikipedia.org/wiki/Software_testing" colorScheme="blue" size="lg">
           Testing
+        </Tag>
+      </WrapItem>
+
+      <WrapItem>
+        <Tag as={Link} href="https://en.wikipedia.org/wiki/Research_and_development" colorScheme="blue" size="lg">
+          R & D
         </Tag>
       </WrapItem>
 
@@ -59,7 +66,6 @@ export const InterestAreas = () => (
         </Tag>
       </WrapItem>
     </Wrap>
-  </>
+  </VStack>
 );
-
 export default InterestAreas;

@@ -17,7 +17,7 @@ export const Powered = () => (
         hIcon={5}
       /> and {" "}
       <Link href="https://chakra-ui.com/">Chakra-ui</Link>.
-      Last updated on Dec 2020.
+      Last updated on Oct 2020.
     </Text>
   </>
 

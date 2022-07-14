@@ -1,10 +1,11 @@
 import { Tag, Wrap, WrapItem } from "@chakra-ui/react";
 import EntityLink from "./EntityLink";
 import React from "react";
+import { t } from "../translate";
 
 export const TechsUsed = props => (
   <Wrap spacing="1">
-    <WrapItem>Techs used: </WrapItem>
+    <WrapItem>{t(["Techs used:"], props.contentLanguage)} </WrapItem>
     { props.techs.map((tech, index) =>
       (
         <WrapItem key={index}>

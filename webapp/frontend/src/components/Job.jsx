@@ -14,17 +14,18 @@ import {
 import Description from "./Description";
 import EntityLink from "./EntityLink";
 import TechsUsed from "./TechsUsed";
+import { t } from "../translate";
 
 
 export const Job = props => {
-  const { id, company, current, description, position, techs, time } = props;
+  const { id, company, contentLanguage, current, description, position, techs, time } = props;
   const backGround = useColorModeValue("gray.100", "gray.900");
 
   return (
     <AccordionItem key={id}>
       <AccordionButton _expanded={{ bg: backGround }}>
         <Box flex="1" textAlign="left">
-          <Text fontSize="lg">{position} at {" "}
+          <Text fontSize="lg">{position} {t(["at"], contentLanguage)} {" "}
             <EntityLink
               text={company.name}
               url={company.link}
@@ -35,7 +36,7 @@ export const Job = props => {
             />
           </Text>
         </Box>
-        { current && <Badge mr={1} colorScheme="blue">Current</Badge> }
+        { current && <Badge mr={1} colorScheme="blue">{t(["Current"], contentLanguage)}</Badge> }
         <AccordionIcon/>
       </AccordionButton>
 
@@ -47,7 +48,7 @@ export const Job = props => {
             </Text>
             {/* TODO: Add link to techs: create component for techs OR reuse InstitutionLink */}
             <Text fontSize="sm" mt={2}>
-              <TechsUsed techs={techs} />
+              <TechsUsed contentLanguage={contentLanguage} techs={techs} />
             </Text>
           </Box>
           <Text fontSize="sm" align="right">{time}</Text>
